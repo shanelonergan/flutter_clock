@@ -127,7 +127,23 @@ class ClockColumn extends StatelessWidget {
           int idx = entry.key;
           String bit = entry.value;
 
-          bool isActive
+          bool isActive = bit == '1';
+          int binaryCellValue = pow(2, 3 - idx);
+
+          return AnimatedContainer(
+            duration: Duration(milliseconds: 475),
+            curve: Curves.ease,
+            height: 40,
+            width: 30,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+              color: isActive
+                ? color
+                : idx < 4 - rows
+                  ? Colors.white.withOpacity(0)
+                  : Colors.black38
+            )
+          )
         })
       ],
     );
