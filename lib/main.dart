@@ -25,7 +25,20 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: 'Alatsi',
       ),
-      home: Scaffold(),
+      home: Scaffold(
+        body: Clock(),
+      ),
     );
   }
+}
+
+class Clock extends StatefulWidget {
+  Clock({Key key}) : super(key:key);
+
+  @override
+  _ClockState createState() => _ClockState();
+}
+
+class _ClockState extends State<Clock> {
+
 }
