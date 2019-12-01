@@ -51,6 +51,13 @@ class _ClockState extends State<Clock> {
     });
     super.initState();
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+
+    )
+  }
 }
 
 class BinaryTime {
@@ -65,3 +72,12 @@ class BinaryTime {
         .map((str) => int.parse(str).toRadixString(2).padLeft(4, '0'))
         .toList();
   }
+
+  get hourTens => binaryIntegers[0];
+  get hourOnes => binaryIntegers[1];
+  get minuteTens => binaryIntegers[2];
+  get minuteOnes => binaryIntegers[3];
+  get secondTens => binaryIntegers[4];
+  get secondOnes => binaryIntegers[5];
+}
+
