@@ -142,9 +142,34 @@ class ClockColumn extends StatelessWidget {
                 : idx < 4 - rows
                   ? Colors.white.withOpacity(0)
                   : Colors.black38
+            ),
+            margin: EdgeInsets.all(4),
+            child: Center(
+              child: isActive
+                ? Text(
+                  binaryCellValue.toString(),
+                  style: TextStyle(
+                    color: Colors.black.withOpacity(0.2),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700
+                  ),
+                )
+                : Container()
+            ),
+          );
+        }),
+        ...[
+          Text(
+            int.parse(binaryInteger, radix: 2).toString(),
+            style: TextStyle(fontSize: 30, color: color),
+          ),
+          Container(
+            child: Text(
+              binaryInteger,
+              style: TextStyle(fontSize: 15, color: color)
             )
           )
-        })
+        ]
       ],
     );
   }
