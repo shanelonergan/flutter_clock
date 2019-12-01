@@ -99,6 +99,41 @@ class _ClockState extends State<Clock> {
   }
 }
 
+class ClockColumn extends StatelessWidget {
+  String binaryInteger;
+  String title;
+  Color color;
+  int rows;
+  List bits;
+
+  ClockColumn({this.binaryInteger, this.title, this.color, this.rows = 4}) {
+    bits = binaryInteger
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        ...[
+          Container(
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.display1
+            )
+          )
+        ],
+        ...bits.asMap().entries.map((entry) {
+          int idx = entry.key;
+          String bit = entry.value;
+
+          bool isActive
+        })
+      ],
+    );
+  }
+}
+
 class BinaryTime {
   List<String> binaryIntegers;
 
