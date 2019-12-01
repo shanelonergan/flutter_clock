@@ -40,5 +40,28 @@ class Clock extends StatefulWidget {
 }
 
 class _ClockState extends State<Clock> {
+  BinaryTime _now = BinaryTime();
 
+  @override
+  void initState(){
+    Timer.periodic(Duration(seconds: 1), (v) {
+      setState(() {
+        _now = BinaryTime();
+      });
+    });
+    super.initState();
+  }
 }
+
+class BinaryTime {
+  List<String> binaryIntegers;
+
+  BinaryTime() {
+    DateTime now = DateTime.now();
+    String hhmmss = DateFormat("Hms").format(now).replaceAll(':', '');
+
+    binaryIntegers = hhmmss
+        .split('')
+        .map((str) => int.parse(str).toRadixString(2).padLeft(4, '0'))
+        .toList();
+  }
