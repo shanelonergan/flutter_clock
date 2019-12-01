@@ -61,14 +61,41 @@ class _ClockState extends State<Clock> {
         children: [
           // clock columns
           ClockColumn(
-        binaryInteger: _now.hourTens,
-        title: 'H',
-        color: Colors.blue,
-        rows: 2,
+            binaryInteger: _now.hourTens,
+            title: 'H',
+            color: Colors.blue,
+            rows: 2,
+          ),
+          ClockColumn(
+            binaryInteger: _now.hourOnes,
+            title: 'h',
+            color: Colors.lightBlue,
+          ),
+          ClockColumn(
+            binaryInteger: _now.minuteTens,
+            title: 'M',
+            color: Colors.green,
+            rows: 3,
+          ),
+          ClockColumn(
+            binaryInteger: _now.minuteOnes,
+            title: 'm',
+            color: Colors.lightGreen,
+          ),
+          ClockColumn(
+            binaryInteger: _now.secondTens,
+            title: 'S',
+            color: Colors.pink,
+            rows: 3,
+          ),
+          ClockColumn(
+            binaryInteger: _now.secondOnes,
+            title: 's',
+            color: Colors.pinkAccent,
+          ),
+        ],
       ),
-        ]
-      )
-    )
+    );
   }
 }
 
