@@ -55,7 +55,19 @@ class _ClockState extends State<Clock> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
+      padding: EdgeInsets.all(50),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // clock columns
+          ClockColumn(
+        binaryInteger: _now.hourTens,
+        title: 'H',
+        color: Colors.blue,
+        rows: 2,
+      ),
+        ]
+      )
     )
   }
 }
