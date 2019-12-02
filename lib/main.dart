@@ -8,7 +8,7 @@ import 'package:intl/intl.dart' show DateFormat;
 
 void main() {
   SystemChrome.setPreferredOrientations([
-    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
     DeviceOrientation.landscapeLeft
   ]);
   runApp(MyApp());
@@ -106,8 +106,8 @@ class ClockColumn extends StatelessWidget {
   int rows;
   List bits;
 
-  ClockColumn({this.binaryInteger, this.title, this.color, this.rows = 4}) {
-    bits = binaryInteger
+  ClockColumn({this.binaryInteger, this.title, this.color, this.rows = 4}){
+    bits = binaryInteger.split(' ');
   }
 
   @override
@@ -167,7 +167,7 @@ class ClockColumn extends StatelessWidget {
             child: Text(
               binaryInteger,
               style: TextStyle(fontSize: 15, color: color)
-            )
+            ),
           )
         ]
       ],
